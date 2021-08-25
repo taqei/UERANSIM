@@ -138,6 +138,8 @@ static nr::ue::UeConfig *ReadConfigYaml()
     result->opC = OctetString::FromHex(yaml::GetString(config, "op", 32, 32));
     result->amf = OctetString::FromHex(yaml::GetString(config, "amf", 4, 4));
 
+    result->portalPort = static_cast<uint16_t>(yaml::GetInt32(amfConfig, "portalPort", 1024, 65535));
+
     result->configureRouting = !g_options.noRoutingConfigs;
 
     // If we have multiple UEs in the same process, then log names should be separated.

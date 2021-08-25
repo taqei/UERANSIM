@@ -29,7 +29,7 @@ void GtpTask::onStart()
 {
     try
     {
-        m_udpServer = new udp::UdpServerTask(m_base->config->gtpIp, cons::GtpPort, this);
+        m_udpServer = new udp::UdpServerTask(m_base->config->gtpIp, m_base->config->gtpPort, this);
         m_udpServer->start();
     }
     catch (const LibError &e)
@@ -214,7 +214,7 @@ void GtpTask::handleUplinkData(int ueId, int psi, OctetString &&pdu)
         if (!gtp::EncodeGtpMessage(gtp, gtpPdu))
             m_logger->err("Uplink data failure, GTP encoding failed");
         else
-            m_udpServer->send(InetAddress(pduSession->upTunnel.address, cons::GtpPort), gtpPdu);
+            m_udpServer->send(InetAddress(pduSession->upTunnel.address, m_base->config->gtpPort), gtpPdu);
     }
 }
 

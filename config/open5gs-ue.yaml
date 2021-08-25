@@ -22,6 +22,8 @@ imeiSv: '4370816125816151'
 gnbSearchList:
   - 127.0.0.1
 
+portalPort: 4997
+
 # UAC Access Identities Configuration
 uacAic:
   mps: false
