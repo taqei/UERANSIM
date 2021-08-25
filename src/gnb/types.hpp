@@ -315,6 +315,9 @@ struct GnbConfig
     EPagingDrx pagingDrx{};
     Vector3 phyLocation{};
 
+    uint16_t GtpPort{};
+    uint16_t PortalPort{};
+
     [[nodiscard]] inline uint32_t getGnbId() const
     {
         return static_cast<uint32_t>((nci & 0xFFFFFFFFFLL) >> (36LL - static_cast<int64_t>(gnbIdLength)));

@@ -127,6 +127,9 @@ struct UeConfig
     bool configureRouting{};
     bool prefixLogger{};
 
+    /*portal port*/
+    uint16_t portalPort{};
+
     [[nodiscard]] std::string getNodeName() const
     {
         if (supi.has_value())

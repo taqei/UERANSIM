@@ -343,6 +343,8 @@ static nr::ue::UeConfig *GetConfigByUe(int ueIndex)
     c->uacAic = g_refConfig->uacAic;
     c->uacAcc = g_refConfig->uacAcc;
 
+    c->portalPort = g_refConfig->portalPort;
+
     if (c->supi.has_value())
         IncrementNumber(c->supi->value, ueIndex);
     if (c->imei.has_value())
