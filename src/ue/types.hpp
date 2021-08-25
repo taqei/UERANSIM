@@ -106,7 +106,9 @@ struct UeConfig
     IntegrityMaxDataRateConfig integrityMaxRate{};
     NetworkSlice defaultConfiguredNssai{};
     NetworkSlice configuredNssai{};
-
+    /*portal port*/
+    uint16_t portalPort{};
+    
     struct
     {
         bool mps{};
@@ -127,8 +129,7 @@ struct UeConfig
     bool configureRouting{};
     bool prefixLogger{};
 
-    /*portal port*/
-    uint16_t portalPort{};
+    
 
     [[nodiscard]] std::string getNodeName() const
     {

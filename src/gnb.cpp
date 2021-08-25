@@ -53,8 +53,8 @@ static nr::gnb::GnbConfig *ReadConfigYaml()
     result->gtpIp = yaml::GetIp4(config, "gtpIp");
 
     
-    result->gtpPort = static_cast<uint16_t>(yaml::GetInt32(amfConfig, "gtpPort", 1024, 65535));
-    result->portalPort = static_cast<uint16_t>(yaml::GetInt32(amfConfig, "portalPort", 1024, 65535));
+    result->GtpPort = static_cast<uint16_t>(yaml::GetInt32(config, "gtpPort", 1024, 65535));
+    result->PortalPort = static_cast<uint16_t>(yaml::GetInt32(config, "portalPort", 1024, 65535));
 
     
     if (yaml::HasField(config, "gtpAdvertiseIp"))

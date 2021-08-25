@@ -48,7 +48,7 @@ RlsUdpTask::RlsUdpTask(TaskBase *base, uint64_t sti, Vector3 phyLocation)
 
     try
     {
-        m_server = new udp::UdpServer(base->config->portalIp, base->config->portalPort);
+        m_server = new udp::UdpServer(base->config->portalIp, base->config->PortalPort);
     }
     catch (const LibError &e)
     {
